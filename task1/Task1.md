@@ -51,3 +51,6 @@ i L2 100.0.0.4/32 [115/30] via 99.1.2.2, 01:36:20, GigabitEthernet0/0/0/0
 i L2 100.0.0.5/32 [115/20] via 99.1.6.6, 01:36:58, GigabitEthernet0/0/0/1
 i L2 100.0.0.6/32 [115/10] via 99.1.6.6, 01:36:58, GigabitEthernet0/0/0/1
 ```
+> [!IMPORTANT] 
+>OPTIONAL
+Repeat this command on all nodes to view the routing tables.
