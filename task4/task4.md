@@ -63,7 +63,7 @@ L2 100.0.0.4/32 [30/115] medium priority
 > NOTE:
 > TI-LFA computes backup paths for all destinations. TI-LFA computation on xrvr-1 for destination xrvr-4 results in a zero-segment backup path, a backup path that does not require additional segments to be pushed on protected packets. TI-LFA calculates that the post-convergence path to xrvr-4, for a failure of the link to xrvr-6, it goes via xrvr-2. Xrvr-2 provides a loop-free path to destination xrvr-4. No additional labels must be imposed on the packets steered on the backup path, xrvr-1 simply forwards them via xrvr-2×Dismiss this alert.
 
-4. Verify the backup path in RIB. RIB contains the primary path (Protected) and backup path (Backup) by using alias “k4“.
+4. Verify the backup path in RIB. RIB contains the primary path (Protected) and backup path (Backup) by using "show route 100.0.0.4/32 detail"
 
 ```
 RP/0/0/CPUO:xrvr-1#show route 100.0.0.4/32 detail
@@ -101,7 +101,7 @@ Route Priority: RIB_PRIORITY NON RECURSIVE_MEDIUM (7) SVD Type RIB SVD TYPE LOCA
 Download Priority 1, Download Version 78
 No advertising protos.
 ```
-5. Verify the backup path in FIB. Notice the CEF contains the primary (Protected) and backup path (Backup) by using alias “k5“.
+5. Verify the backup path in FIB. Notice the CEF contains the primary (Protected) and backup path (Backup) by using "sh cef 100.0.0.4/32“.
 ```
 RP/0/0/CPUO:xrvr-1#sh cef 100.0.0.4/32
 Sat Apr 14 08:35:48.411 UTC
@@ -113,7 +113,7 @@ Sat Apr 14 08:35:48.411 UTC
   via 99.1.2.2/32, Gigabit Ethernet0/0/0/0, 9 dependencies, veight o, class 0, protected, backup (Local-LF.) [flags 0x600] path-idx O bkup-idx 1 NHID OXO [Oxa177b1fc Ox0] next hop 99.1.2.2/32 local label 19004 labels imposed (19004)
   via 99.1.6.6/32, Gigabit Ethernet0/0/0/1, 9 dependencies, weight 0, class o, protected, backup (Local-LF) [flags Ox600] path-idx i bkup-idx O NHID OXO (Oxa177b42c OxO) next hop 99.1.6.6/32 local label 19004 labels imposed (19004)
 ```
-6. Verify adjacency segment protection by using alias “k6“.
+6. Verify adjacency segment protection by using "show isis adjacency systemid xrvr-2 detail“.
 ```
 RP/0/0/CPUO:xrvr-1#show isis adjacency systemid xrvr-2 detail
 Sat Apr 14 08:37:14.775 UTC
