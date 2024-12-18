@@ -33,5 +33,5 @@ This page gives you an overview about all tasks included in this lab. While you 
 * Task 8: Configure SR Dynamic Path
 * Task 9: Advanced SR-TE (Flex-Also, AS, ODN)
 
-## Physical 
+## Physical Topology
 <img src="images/SRTE Lab.png" width="1200">
