@@ -20,3 +20,15 @@ Upon completion of this lab, you will be able to:
 * Implement SR PCE<br>
 * Implement SR Dynamic path<br>
 
+Lab Tasks
+This page gives you an overview about all tasks included in this lab. While you can easily navigate between the tasks on any task-specific page, use this page as overview.
+
+* Task 1: Verify LDP
+* Task 2: Implement Segment Routing
+* Task 3: Migrate LDP to Segment Routing
+* Task 4: Implement TI-LFA
+* Task 5: Implement SR-TE with old CLI (using Tunnels)
+* Task 6: Implement SR-TE with new CLI (using Policy)
+* Task 7: Enable Network Controller (SR-PCE)
+* Task 8: Configure SR Dynamic Path
+* Task 9: Advanced SR-TE (Flex-Also, AS, ODN)
