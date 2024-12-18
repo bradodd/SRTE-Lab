@@ -7,7 +7,6 @@ Step2:
 Press Enter to access the connection and log into the console with the credentials: 
 
 username: cisco 
-
 password: C1sco12345
 
 Step 3:
