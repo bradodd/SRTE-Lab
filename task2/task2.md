@@ -27,7 +27,7 @@ Verify if Segment Routing is working and labels assigned per SR by using the com
 
 
 > Repeat this task
-> Follow the above step in the core routers xrvr-1 through xrvr-6 to confirm Segment routing assigned labels. The label 16000 assigned should confirm SR is working.×Dismiss this alert.
+> Follow the above step in the core routers xrvr-1 through xrvr-6 to confirm Segment routing assigned labels. The label 16000 assigned should confirm SR is working.
 
 
 Step 3:
