@@ -56,7 +56,7 @@ i L2 100.0.0.6/32 [115/10] via 99.1.6.6, 01:36:58, GigabitEthernet0/0/0/1
 >
 
 Step 4:
-On xrvr-1 and xrvr-4, issue alias “a2” (show running-config router bgp) command to verify the BGP configuration as below.
+On xrvr-1 and xrvr-4, issue "show running-config router bgp" command to verify the BGP configuration as below.
 
 ```
 RP/0/0/CPU0:xrvr-1#show running-config router bgp
@@ -149,7 +149,7 @@ show running-config | section ip route 0.0.0.0
 
 # Verify LDP Configuration
 Step 1:
-Verify the LDP is configured in the core using the alias “a6” (show running-config mpls ldp) and alias “a7” (show mpls ldp neighbor brief)
+Verify the LDP is configured in the core using the “show running-config mpls ldp" and "show mpls ldp neighbor brief"
 ```
 RP/0/0/CPU0:xrvr-1#show running-config mpls ldp
 Fri Nov 27 13:51:00.503 UTC
@@ -202,7 +202,7 @@ Tracing the route to 100.0.0.8
 * In your setup the path in the trace may be xrvr-7 –- xrvr-1 –- xrvr-2 — xrvr-3 –- xrvr-4 –- xrvr-8
 
 Step 3:
-Check the cef entry of route 100.0.0.8/32 on xrvr-1 (use alias “a10″)
+Check the cef entry of route 100.0.0.8/32 on xrvr-1 with "show cef vrf RED 100.0.0.8/32"
 ```
 RP/0/0/CPU0:xrvr-1#a10
 RP/0/0/CPU0:xrvr-1#show cef vrf RED 100.0.0.8/32
@@ -219,7 +219,7 @@ Fri Nov 27 14:53:03.928 UTC
      next hop 99.1.6.6/32 Gi0/0/0/1    labels imposed {24007 24014}
 ```
 Step 4:
-Verify Segment Routing is not enabled/configured in the Core using alias “a11“.
+Verify Segment Routing is not enabled/configured in the Core using “show running-config segment-routing"
 ```
 RP/0/0/CPU0:xrvr-1#a11
 RP/0/0/CPU0:xrvr-1#show running-config segment-routing
