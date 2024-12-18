@@ -3,7 +3,7 @@
 Step 1:
 The Lab is pre-configured with MPLS (LDP) in the core (xrvr-1 to xrvr-6) and L3-VPN “RED” xrvr-1 (PE) interface facing xrvr-7 (CE), as well as xrvr-4 (PE) interface facing xrvr-8 (CE).
 
-Step2:
+Step 2:
 Press Enter to access the connection and log into the console with the credentials: 
 
 username: cisco 
