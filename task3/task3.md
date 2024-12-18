@@ -54,14 +54,14 @@ The output above clearly shows the Prefix-SID (index 4 = “19004“) of Loopbac
 > The above commands show that ecmp is present when doing segment routing, and it confirms that the labels are based on SR.
 
 Step 4:
-Check the cef entry of route 100.0.0.8/32 on xrvr-1 by using alias “c5”:
+Check the cef entry of route 100.0.0.8/32 on xrvr-1 by using "show cef vrf RED 100.0.0.8/32":
 
 
 Step 5:
 After verifying that the control plane is using Segment Routing, we can remove LDP from the core.
 
 Step 6:
-Remove the MPLS LDP from the routers xrvr-1 through xrvr-6 by using the alias “c6” as below:
+Remove the MPLS LDP from the routers xrvr-1 through xrvr-6 by using the configuration below:
 
 ```
 configure
@@ -86,11 +86,11 @@ Fri Nov 27 15:28:15.313 UTC
 
 # Verify Segment Routing Forwarding
 Step 1:
-On xrvr-1, verify the various MPLS forwarding entries programmed by issuing the command alias “c9” (show mpls forwarding) as below:
+On xrvr-1, verify the various MPLS forwarding entries programmed by issuing the command "show mpls forwarding" as below:
 
 
 * By default, Penultimate Hop Popping (PHP) is enabled. For example, for neighbor xrvr-2’s prefix-SID (19002) the label is Pop, as seen above
 * Prefix SIDs are ECMP aware, e.g. the ipv4 prefix-SID to xrvr-4 (19004), has two outgoing labels, as seen above. One towards xrvr-2 and one towards xrvr-6.
-* 
+  
 > Repeat this task (optional)
 > Repeat this step on xrvr-2 through xrvr-6 to view MPLS forwarding entries.
