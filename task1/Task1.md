@@ -147,5 +147,83 @@ show running-config | section router bgp
 show running-config | section ip route 0.0.0.0
 ```
 
+# Verify LDP Configuration
+Step 1:
+Verify the LDP is configured in the core using the alias “a6” (show running-config mpls ldp) and alias “a7” (show mpls ldp neighbor brief)
+```
+RP/0/0/CPU0:xrvr-1#show running-config mpls ldp
+Fri Nov 27 13:51:00.503 UTC
+mpls ldp
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+```
+```
+RP/0/0/CPU0:xrvr-1#a7
+RP/0/0/CPU0:xrvr-1#show mpls ldp neighbor brief
+Fri Nov 27 13:51:39.510 UTC
 
+Peer               GR  NSR  Up Time     Discovery   Addresses     Labels
+                                        ipv4  ipv6  ipv4  ipv6  ipv4   ipv6
+-----------------  --  ---  ----------  ----------  ----------  ------------
+100.0.0.2:0        N   N    00:00:41    1     0     4     0     15     0
+100.0.0.6:0        N   N    00:00:41    1     0     4     0     15     0
+```
+Repeat this step on the core routers xrvr-2 through xrvr-6 to verify the ldp configuration.
 
+Step 2:
+Check the end-to-end reachability between the 2 CE routers xrvr-7 and xrvr-8.
+```
+RP/0/0/CPU0:xrxr-7#ping 100.0.0.8
+Fri Nov 27 14:46:43.321 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 100.0.0.8, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/21/39 ms
+```
+```
+RP/0/0/CPU0:xrxr-7#traceroute 100.0.0.8
+Fri Nov 27 14:47:19.548 UTC
+
+Type escape sequence to abort.
+Tracing the route to 100.0.0.8
+
+ 1  99.1.7.1 9 msec  9 msec  0 msec
+ 2  99.1.6.6 [MPLS: Labels 24007/24014 Exp 0] 49 msec  19 msec  19 msec
+ 3  99.5.6.5 [MPLS: Labels 24004/24014 Exp 0] 29 msec  9 msec  19 msec
+ 4  99.4.5.4 [MPLS: Label 24014 Exp 0] 29 msec  9 msec  9 msec
+ 5  99.4.8.8 29 msec  *  9 msec
+```
+* Verify the reachability to xrvr-7 from xrvr-8.
+* From the traceroute command check the hops 2,3 and 4. The trace has mpls labels. Keep note of the labels numbers.
+* 24014 in the picture above is the vpn label (in your lab it might be different label value) and the 24007 and 24004 are mpls ldp labels.
+* In your setup the path in the trace may be xrvr-7 –- xrvr-1 –- xrvr-2 — xrvr-3 –- xrvr-4 –- xrvr-8
+
+Step 3:
+Check the cef entry of route 100.0.0.8/32 on xrvr-1 (use alias “a10″)
+```
+RP/0/0/CPU0:xrvr-1#a10
+RP/0/0/CPU0:xrvr-1#show cef vrf RED 100.0.0.8/32
+Fri Nov 27 14:53:03.928 UTC
+100.0.0.8/32, version 6, internal 0x5000001 0x0 (ptr 0xa13fafcc) [1], 0x0 (0x0), 0x208 (0xa1527190)
+ Updated Nov 27 14:31:14.647
+ Prefix Len 32, traffic index 0, precedence n/a, priority 3
+   via 100.0.0.4/32, 3 dependencies, recursive [flags 0x6000]
+    path-idx 0 NHID 0x0 [0xa158ffdc 0x0]
+    recursion-via-/32
+    next hop VRF - 'default', table - 0xe0000000
+    next hop 100.0.0.4/32 via 24010/0/21
+     next hop 99.1.2.2/32 Gi0/0/0/0    labels imposed {24007 24014}
+     next hop 99.1.6.6/32 Gi0/0/0/1    labels imposed {24007 24014}
+```
+Step 4:
+Verify Segment Routing is not enabled/configured in the Core using alias “a11“.
+```
+RP/0/0/CPU0:xrvr-1#a11
+RP/0/0/CPU0:xrvr-1#show running-config segment-routing
+Fri Nov 27 14:54:04.624 UTC
+% No such configuration item(s)
+```
+(Optional) Repeat the above step on the core routers xrvr-2 to xrvr-6 to verify Segment Routing is not enabled/configured.
