@@ -53,3 +53,99 @@ i L2 100.0.0.6/32 [115/10] via 99.1.6.6, 01:36:58, GigabitEthernet0/0/0/1
 ```
 > [OPTIONAL]
 > Repeat this command on all nodes to view the routing tables.
+>
+
+Step 4:
+On xrvr-1 and xrvr-4, issue alias “a2” (show running-config router bgp) command to verify the BGP configuration as below.
+
+```
+RP/0/0/CPU0:xrvr-1#show running-config router bgp
+Fri Nov 27 13:42:41.327 UTC
+router bgp 64001
+ bgp router-id 100.0.0.1
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 100.0.0.4
+  remote-as 64001
+  description to xrvr-4
+  update-source Loopback0
+  address-family vpnv4 unicast
+  !
+ !
+ neighbor 100.0.0.9
+  remote-as 64001
+  description to xrvr-9
+  update-source Loopback0
+  address-family ipv4 unicast
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf RED
+  rd 1:1
+  address-family ipv4 unicast
+  !
+  neighbor 99.1.7.7
+   remote-as 3
+   address-family ipv4 unicast
+    route-policy ALL in
+    route-policy ALL out
+   !
+  !
+ !
+!
+```
+```
+RP/0/0/CPU0:xrvr-4#show running-config router bgp
+Fri Nov 27 13:43:30.505 UTC
+router bgp 64001
+ bgp router-id 100.0.0.4
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 100.0.0.1
+  remote-as 64001
+  description to xrvr-1
+  update-source Loopback0
+  address-family vpnv4 unicast
+  !
+ !
+ neighbor 100.0.0.10
+  remote-as 64002
+  description to xrvr-10
+  update-source Loopback0
+  address-family ipv4 unicast
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf RED
+  rd 1:1
+  address-family ipv4 unicast
+  !
+  neighbor 99.4.8.8
+   remote-as 2
+   address-family ipv4 unicast
+    route-policy ALL in
+    route-policy ALL out
+   !
+  !
+ !
+!
+```
+> [INFORMATION]
+> An iBGP session is configured between xrvr-1 and xrvr-4
+>
+
+ Step 5:
+eBGP sessions are configured between xrvr-7 (CE) and xrvr-1 (PE), as well as between xrvr-4 (PE) and xrvr-8 (CE). To verify these connections, issue the following commands on xrvr-7 and xrvr-8:
+```
+show running-config | section router bgp
+show running-config | section ip route 0.0.0.0
+```
+
+
+
