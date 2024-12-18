@@ -13,10 +13,10 @@ The nine tasks (Task 1 – Task 9) are mandatory to follow in order to finish th
 
 Upon completion of this lab, you will be able to:
 
-Implement SR in the provider network.
-Prefer SR in the provider network.
-Implement Topology-Independent Loop-Free Alternate (TI-LFA)
-Implement Segment Routing Traffic Engineering in various ways
-Implement SR PCE
-Implement SR Dynamic path
+Implement SR in the provider network.<br>
+Prefer SR in the provider network.<br>
+Implement Topology-Independent Loop-Free Alternate (TI-LFA)<br>
+Implement Segment Routing Traffic Engineering in various ways<br>
+Implement SR PCE<br>
+Implement SR Dynamic path<br>
 
