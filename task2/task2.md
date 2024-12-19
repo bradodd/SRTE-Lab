@@ -25,8 +25,8 @@ RP/0/0/CPU0:xrvr-1(config)#commit
 Step 2:
 Verify if Segment Routing is working and labels assigned per SR by using the command "show isis database xrvr-1 verbose detail" and "show mpls label table":
 
-<img src="images/t2s2.png" width="1200">
-<img src="images/t2s2b.png" width="1200">
+<img src="../images/t2s2.png" width="1200">
+<img src="../images/t2s2b.png" width="1200">
 
 > Repeat this task
 > Follow the above step in the core routers xrvr-1 through xrvr-6 to confirm Segment routing assigned labels. The label 16000 assigned should confirm SR is working.
@@ -51,8 +51,8 @@ end
 Step 6:
 Confirm the SRGB has taken effect check as shown below (by using aliases “b5” and “b6”):
 
-<img src="images/t6s2a.png" width="1200">
-<img src="images/t6s2b.png" width="1200">
+<img src="../images/t6s2a.png" width="1200">
+<img src="../images/t6s2b.png" width="1200">
 
 > ATTENTION
 > The label 19000 confirms that SRGB has changed from default to manual (19000 - 20999)×Dismiss this alert.
