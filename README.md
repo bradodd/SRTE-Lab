@@ -31,7 +31,7 @@ This page gives you an overview about all tasks included in this lab. While you 
 * Task 6: Implement SR-TE with new CLI (using Policy)
 * Task 7: Enable Network Controller (SR-PCE)
 * Task 8: Configure SR Dynamic Path
-* Task 9: Advanced SR-TE (Flex-Also, AS, ODN)
+* Task 9: Advanced SR-TE (Flex-Algo, AS, ODN)
 
 ## Physical Topology
 <img src="images/SRTE Lab.png" width="1200">
