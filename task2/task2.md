@@ -54,7 +54,7 @@ Confirm the SRGB has taken effect check as shown below (by using aliases “b5�
 <img src="images/t6s2a.png" width="1200">
 <img src="images/t6s2b.png" width="1200">
 
-> ATTENTION
+> [!ATTENTION]
 > The label 19000 confirms that SRGB has changed from default to manual (19000 - 20999)×Dismiss this alert.
 Follow Step-8 below by configuring the Prefix-SID of the loopbacks on the routers from xrvr-1 to xrvr-6 as given in the below table:
 
