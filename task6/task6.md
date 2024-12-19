@@ -30,8 +30,10 @@ configure
 ```
 Step 2:  Enter the following commands to configure the SR policy named “1”. The SR policy is identified by its end-point (100.0.0.4, in this example) and its color (10, in this example). By default, a dynamic Binding-SID label is allocated for an SR policy, but in this example, an explicit Binding-SID label 4000 is configured. Multiple paths can be configured, each with its preference value. The valid path with the highest preference value is selected as the path of the SR policy. The explicit-path SIDLIST-2 is specified as path of this SR policy.
 
+>
 > !! ON XRVR-1 !!
-> On xrvr-1, configure the following:
+>
+>On xrvr-1, configure the following:
 ```
 configure
 segment-routing
