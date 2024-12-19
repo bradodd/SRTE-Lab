@@ -267,5 +267,8 @@ Peer address: 100.0.0.1
 Peer address: 100.0.0.4
   State: Up
   Capabilities: Stateful, Segment-Routing, Update, Instantiation
+
+
+```
 Up to this point, you have successfully enabled the Network Controller functionality on xrvr-9.
 ```
