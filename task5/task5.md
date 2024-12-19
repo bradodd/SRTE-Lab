@@ -1,4 +1,4 @@
-# Task 5: Implement SR-TE using Tunnels (Optional Task - Skip to next task)
+# Task 5: Implement SR-TE using Tunnels 
 
 This scenario demonstrates how to configure SR Traffic Engineering Tunnels in both explicit and dynamic manner.
 
