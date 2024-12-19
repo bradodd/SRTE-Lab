@@ -150,14 +150,16 @@ show running-config | section ip route 0.0.0.0
 Step 1:
 Verify the LDP is configured in the core using the “show running-config mpls ldp" and "show mpls ldp neighbor brief"
 ```
-RP/0/0/CPU0:xrvr-1#show running-config mpls ldp
-Fri Nov 27 13:51:00.503 UTC
+RP/0/0/CPU0:xrvr-1#show run mpls ldp
+Thu Dec 19 20:39:25.219 UTC
 mpls ldp
+ router-id 100.0.0.1
  interface GigabitEthernet0/0/0/0
  !
  interface GigabitEthernet0/0/0/1
  !
 !
+
 ```
 ```
 RP/0/0/CPU0:xrvr-1#a7
@@ -175,25 +177,24 @@ Repeat this step on the core routers xrvr-2 through xrvr-6 to verify the ldp con
 Step 2:
 Check the end-to-end reachability between the 2 CE routers xrvr-7 and xrvr-8.
 ```
-RP/0/0/CPU0:xrxr-7#ping 100.0.0.8
-Fri Nov 27 14:46:43.321 UTC
+xrvr-7#ping 100.0.0.8
 Type escape sequence to abort.
 Sending 5, 100-byte ICMP Echos to 100.0.0.8, timeout is 2 seconds:
 !!!!!
-Success rate is 100 percent (5/5), round-trip min/avg/max = 9/21/39 ms
-```
-```
-RP/0/0/CPU0:xrxr-7#traceroute 100.0.0.8
-Fri Nov 27 14:47:19.548 UTC
+Success rate is 100 percent (5/5), round-trip min/avg/max = 17/18/19 ms
 
+```
+```
+xrvr-7# traceroute 100.0.0.8
 Type escape sequence to abort.
 Tracing the route to 100.0.0.8
+VRF info: (vrf in name/id, vrf out name/id)
+  1 99.1.7.1 7 msec 2 msec 2 msec
+  2 99.1.6.6 [MPLS: Labels 24010/24019 Exp 0] 21 msec 67 msec 19 msec
+  3 99.5.6.5 [MPLS: Labels 24010/24019 Exp 0] 25 msec 18 msec 21 msec
+  4 99.4.5.4 [MPLS: Label 24019 Exp 0] 18 msec 17 msec 14 msec
+  5 99.4.8.8 [AS 2] 13 msec 22 msec *
 
- 1  99.1.7.1 9 msec  9 msec  0 msec
- 2  99.1.6.6 [MPLS: Labels 24007/24014 Exp 0] 49 msec  19 msec  19 msec
- 3  99.5.6.5 [MPLS: Labels 24004/24014 Exp 0] 29 msec  9 msec  19 msec
- 4  99.4.5.4 [MPLS: Label 24014 Exp 0] 29 msec  9 msec  9 msec
- 5  99.4.8.8 29 msec  *  9 msec
 ```
 * Verify the reachability to xrvr-7 from xrvr-8.
 * From the traceroute command check the hops 2,3 and 4. The trace has mpls labels. Keep note of the labels numbers.
@@ -203,26 +204,26 @@ Tracing the route to 100.0.0.8
 Step 3:
 Check the cef entry of route 100.0.0.8/32 on xrvr-1 with "show cef vrf RED 100.0.0.8/32"
 ```
-RP/0/0/CPU0:xrvr-1#a10
 RP/0/0/CPU0:xrvr-1#show cef vrf RED 100.0.0.8/32
-Fri Nov 27 14:53:03.928 UTC
-100.0.0.8/32, version 6, internal 0x5000001 0x0 (ptr 0xa13fafcc) [1], 0x0 (0x0), 0x208 (0xa1527190)
- Updated Nov 27 14:31:14.647
+Thu Dec 19 20:33:55.892 UTC
+100.0.0.8/32, version 15, internal 0x5000001 0x0 (ptr 0xa14160c0) [1], 0x0 (0x0), 0x208 (0xa175639c)
+ Updated Dec 18 21:09:34.604
  Prefix Len 32, traffic index 0, precedence n/a, priority 3
    via 100.0.0.4/32, 3 dependencies, recursive [flags 0x6000]
-    path-idx 0 NHID 0x0 [0xa158ffdc 0x0]
+    path-idx 0 NHID 0x0 [0xa17cb170 0x0]
     recursion-via-/32
     next hop VRF - 'default', table - 0xe0000000
-    next hop 100.0.0.4/32 via 24010/0/21
-     next hop 99.1.2.2/32 Gi0/0/0/0    labels imposed {24007 24014}
-     next hop 99.1.6.6/32 Gi0/0/0/1    labels imposed {24007 24014}
+    next hop 100.0.0.4/32 via 24011/0/21
+     next hop 99.1.2.2/32 Gi0/0/0/0    labels imposed {24009 24019}
+     next hop 99.1.6.6/32 Gi0/0/0/1    labels imposed {24010 24019}
+
 ```
 Step 4:
 Verify Segment Routing is not enabled/configured in the Core using “show running-config segment-routing"
 ```
-RP/0/0/CPU0:xrvr-1#a11
 RP/0/0/CPU0:xrvr-1#show running-config segment-routing
-Fri Nov 27 14:54:04.624 UTC
+Thu Dec 19 20:34:46.879 UTC
 % No such configuration item(s)
+
 ```
 (Optional) Repeat the above step on the core routers xrvr-2 to xrvr-6 to verify Segment Routing is not enabled/configured.
