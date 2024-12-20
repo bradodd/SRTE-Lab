@@ -23,7 +23,7 @@ interface Loopback0
        prefix-sid algorithm 128 absolute 19501
        prefix-sid algorithm 129 absolute 19601
 On ```xrvr-4```, under ISIS routing instance, configure the Flex-Algo the router belongs to and the Prefix-SID (Algo SID) as per below: 
-
+```
 router isis 1
  flex-algo 128
     advertise-definition
@@ -36,8 +36,10 @@ router isis 1
     address-family ipv4 unicast
         prefix-sid algorithm 128 absolute 19504
         prefix-sid algorithm 129 absolute 19604
-Step 2:  Now let’s configure “Algo 128” on xrvr-2, Blue plane (Algo 128) as per example below:
 
+```
+Step 2:  Now let’s configure “Algo 128” on xrvr-2, Blue plane (Algo 128) as per example below:
+```
 router isis 1
  flex-algo 128
     advertise-definition
@@ -46,6 +48,7 @@ router isis 1
     passive
     address-family ipv4 unicast
         prefix-sid algorithm 128 absolute 19502
+```
 Step 3:  Here is a challenge for YOU. Now that you understand Flex-Algo config, let’s enable Flex-algo on xrvr-3 (hint: check above example from xrvr-2 and change the Prefix-SID so that they are unique in the domain):
 
 
@@ -82,7 +85,7 @@ BGP can automatically steer traffic into an SR Policy based on BGP next-hop and 
 We will assign a color extended community to customer prefix (100.0.0.8/32) on ```xrvr-4```, and advertise the same prefix with BGP color community to ```xrvr-1```. On ```xrvr-1```, we will create a new SR-Policy with the same color number as the BGP color extended community that was assigned to ‘100.0.0.8/32’ by the other PE node. Based on that, traffic destined to the customer prefix mentioned above will be steered through the SR-Policy.
 
 Step 1:  First, let’s assign a color to the customer prefix ‘100.0.0.8/32’. On ```xrvr-4```, apply the following configuration as below:
-
+```
 extcommunity-set opaque GREEN
   35
 end-set
@@ -97,6 +100,7 @@ end-policy
 !
 commit
 !
+```
 Step 2:  Now, on ```‘xrvr-4```‘ let’s adjust the BGP configuration. Under address-family VPNv4, we are going to install the route-policy (SET-COLOR) created earlier in the outgoing direction towards ‘```xrvr-1```’.
 
 On ```xrvr-4```, apply the following configuration as below:
