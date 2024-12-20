@@ -1,4 +1,4 @@
-#Task 8: Configure SR Dynamic Path using the Network Controller (SR-PCE)
+# Task 8: Configure SR Dynamic Path using the Network Controller (SR-PCE)
 
 This scenario demonstrates how to instantiate an SR policy from a locally configured interface tunnel (a.k.a SR Policy). The SR Policy path can be computed locally on the head-end, or the SR-PCE Controller can compute it. In this scenario, SR-PCE computes the path.
 
