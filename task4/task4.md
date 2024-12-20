@@ -145,8 +145,9 @@ Total adjacency count: 1
 ```
 By enabling TI-LFA on a link, the adjacency-SIDs of that link are also protected. Only the protected adjacency-SID is protected; the non-protected or non-FRR adjacency-SIDs stays unprotected. The backup path for an adjacency-SID steers the traffic to the remote end of the link.
 
-7. Remove the TI-LFA config from xrvr-1
+7. Enable TI-LFA on xrvr2-6
 
+Devices xrvr-1 and xrvr-4 should have the following configuration
 ```
 router isis 1
 interface GigabitEthernet0/0/0/0
@@ -156,6 +157,29 @@ interface GigabitEthernet0/0/0/0
   exit
  exit
 interface GigabitEthernet0/0/0/1
+ address-family ipv4 unicast
+  no fast-reroute per-prefix
+  no fast-reroute per-prefix ti-lfa
+  exit
+ exit
+commit
+```
+Devices xrvr-2 & 3 and xrvr-5 & 6 should have the following configuration
+```
+router isis 1
+interface GigabitEthernet0/0/0/0
+ address-family ipv4 unicast
+  no fast-reroute per-prefix
+  no fast-reroute per-prefix ti-lfa
+  exit
+ exit
+interface GigabitEthernet0/0/0/1
+ address-family ipv4 unicast
+  no fast-reroute per-prefix
+  no fast-reroute per-prefix ti-lfa
+  exit
+ exit
+interface GigabitEthernet0/0/0/2
  address-family ipv4 unicast
   no fast-reroute per-prefix
   no fast-reroute per-prefix ti-lfa
