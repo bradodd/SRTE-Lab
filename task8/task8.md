@@ -29,10 +29,9 @@ Step 2:  Verify the status of the SR policy on ```xrvr-1``` by using the command
 ```xrvr-1``` used PCEP PCRequest and PCReply messages to request and receive the path computation. Then ```xrvr-1``` sent a PCReport message to report the SR Policy to ```xrvr-9``` node. In the report to its SR-PCE, ```xrvr-1``` sets the delegate (D) flag, to indicate that SR-PCE can update the path.
 
 Step 3:  Enter the following command (“show pce lsp detail”) on SR-PCE to show the SR policy information that we created on ```xrvr-1``` (PCC – 100.0.0.1):
-
-RP/0/0/CPU0:```xrvr-9```#show pce lsp detail
 ```
-Mon Apr 12 22:35:25.312 UTC
+RP/0/0/CPU0:xrvr-9#show pce lsp detail
+Fri Dec 20 19:19:44.239 UTC
 
 PCE's tunnel database:
 ----------------------
@@ -43,7 +42,7 @@ Color: 10
 Interface Name: srte_c_10_ep_100.0.0.4
  LSPs:
   LSP[0]:
-   source 100.0.0.1, destination 100.0.0.4, tunnel ID 3, LSP ID 1
+   source 100.0.0.1, destination 100.0.0.4, tunnel ID 1, LSP ID 1
    State: Admin up, Operation up
    Setup type: Segment Routing
    Binding SID: 4000
@@ -53,7 +52,7 @@ Interface Name: srte_c_10_ep_100.0.0.4
    Preference: 50
    Bandwidth: requested 0 kbps, applied 0 kbps
    PCEP information:
-     PLSP-ID 0x2, flags: D:1 S:0 R:0 A:1 O:1 C:0
+     PLSP-ID 0x1, flags: D:1 S:0 R:0 A:1 O:1 C:0
    LSP Role: Single LSP
    State-sync PCE: None
    PCC: 100.0.0.1
@@ -63,7 +62,7 @@ Interface Name: srte_c_10_ep_100.0.0.4
       SID[0]: Node, Label 19005, Address 100.0.0.5
       SID[1]: Node, Label 19004, Address 100.0.0.4
    Computed path: (Local PCE)
-     Computed Time: Mon Apr 12 22:30:09 UTC 2021 (00:05:16 ago)
+     Computed Time: Fri Dec 20 19:16:51 UTC 2024 (00:02:53 ago)
      Metric type: TE, Accumulated Metric 30
       SID[0]: Node, Label 19005, Address 100.0.0.5
       SID[1]: Node, Label 19004, Address 100.0.0.4
@@ -71,11 +70,13 @@ Interface Name: srte_c_10_ep_100.0.0.4
      None
    Disjoint Group Information:
      None
+
+RP/0/0/CPU0:xrvr-9#
 ```
 > Repeat
 Repeat the step on router xrvr-4 in order to have the reverse path tunnel, as per Step 4 below.
 
-Step 4:  On xrvr-4, enter the following commands to instantiate an SR policy named “```Policy 1```” and configure the policy to request SR-PCE to compute a path to end-point 100.0.0.1 (```xrvr-1```). SR-PCE must calculate the best path for the destination (```xrvr-1```) and provide a List of Segments to xrvr-4. In turn, xrvr-4 will install this List of Segments in CEF table for the “Policy 1“.
+Step 4:  On xrvr-4, enter the following commands to instantiate an SR policy named “```Policy 1```” and configure the policy to request SR-PCE to compute a path to end-point 100.0.0.1 (```xrvr-1```). SR-PCE must calculate the best path for the destination (```xrvr-1```) and provide a List of Segments to xrvr-4. In turn, xrvr-4 will install this List of Segments in CEF table for the “```Policy 1```“.
 ```
 segment-routing
  traffic-eng
