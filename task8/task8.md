@@ -208,4 +208,3 @@ Step 9:  The final step is to verify if Data/Packet flow is pushed through the S
 
 <img src="../images/t9s9.png" width=768>
 
-Our GitHub code is available here here: https://github.com/beye91/LTRMPL-2208
