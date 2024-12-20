@@ -49,15 +49,16 @@ segment-routing
 end
 ```
 
-Step 3:  On xrvr-1, verify the status of the SR policy by using alias “g4”:
+Step 3:  On xrvr-1, verify the status of the SR policy by using "show segment-routing traffic-eng policy”:
+<img src="../images/t6s3.png">
 
 > NOTE:
 > The segment list is as specified in the explicit path.
 
-Step 4:  On xrvr-1, verify the Binding-SID (label 4000) forwarding entry (use alias “g5″):
+Step 4:  On xrvr-1, verify the Binding-SID (label 4000) forwarding entry using "show mpls forwarding labels 4000″):
 ```
 RP/0/0/CPUO:xrvr-1#show mpls forwarding labels 4000
-Sun Apr 11 15:51:52.607 UTC
+Fri Dec 20 16:00:24.857 UTC
 Local   Outgoing    Prefix  Outgoing       Next Hop        Bytes
 Label   Label       or ID   Interface                   Switched
 -----   --------    ------  ---------      --------        --------
@@ -68,7 +69,7 @@ Step 5:  On xrvr-1, verify the forwarding entry of the SR policy (‘srte_c_10_e
 
 ```
 RP/0/0/CPUO:xrvr-1#show mpls forwarding tunnels
-Sun Apr 11 15:55:32.362 UTC
+Fri Dec 20 16:02:26.113 UTC
 Local               Outgoing    Outgoing    Next Hop        Bytes
 Label               Label       Interface                   Switched
 -----               --------    ---------   --------        --------
