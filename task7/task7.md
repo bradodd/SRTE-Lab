@@ -11,7 +11,7 @@ commit
 
 SR-PCE gets its topology information from the BGP-LS (link-state) address family. Typically, BGP Route Reflectors distribute BGP-LS information throughout the network. In this example, the xrvr-2 distributes BGP-LS information to SR-PCE (xrvr-9). Any node can provide the BGP-LS topology feed to the SR-PCE.
 
-Step 2:  Enable the link state address family on the ```router``` xrvr-2 and xrvr-9 in AS 64001 in order to share the BGP-LS with the SR-PCE.
+Step 2:  Enable the link state address family on the router xrvr-2 and xrvr-9 in AS 64001 in order to share the BGP-LS with the SR-PCE.
 
 > !! On xrvr-2 and xrvr-9 !!
 
@@ -122,7 +122,7 @@ Paths: (1 available, best #1)
      Link-state: Node-name: xrve-2, ISIS area: 49.00.01, Local TE Router-ID:
                  100.0.0.2 SRGB: 19000:2000 SR-ALG: 0 SR-ALG: 1
 ```
-Step 6:  Links are advertised as unidirectional inter-connections. For example, the link from xrvr-1 to xrvr-2 (99.1.2.1 is the interface address on xrvr-1).
+Step 6:  Links are advertised as unidirectional inter-connections. For example, the link from ```xrvr-1``` to ```xrvr-2``` (99.1.2.1 is the interface address on xrvr-1).
 
 ```
 RP/0/0/CPU0:xrvr-9#show bgp link-state link-state | incl [E] | incl 99.1.2.1
@@ -174,7 +174,7 @@ Paths: (1 available, best #1)
                   .0x00000000
 
 ```
-Step 7:  SR-PCE uses the BGP-LS information to feed its SR-TE Database (SRTE-DB). Enter the following command (alias “h10”) to see a summary of the SRTE-DB on xrvr-9:
+Step 7:  SR-PCE uses the BGP-LS information to feed its SR-TE Database (SRTE-DB). Enter the following command ```“show pce ipv4 topology summary”``` to see a summary of the SRTE-DB on ```xrvr-9```:
 
 ```
 RP/0/0/CPU0:xrvr-9#show pce ipv4 topology summary
@@ -220,7 +220,7 @@ Topology Ready Summary:
 
 
 ```
-Step 8:  The PCCs (xrvr-1 and xrvr-4) are configured to set up PCEP sessions with the SR-PCE (xrvr-9) node.
+Step 8:  The PCCs (```xrvr-1``` and ```xrvr-4```) are configured to set up PCEP sessions with the SR-PCE ```xrvr-9``` node.
 
 On xrvr-1, configure the following:
 ```
@@ -247,7 +247,7 @@ end
 !
 ```
 
-Step 9: Enter the following commands (show segment-routing traffic-eng pcc ipv4 peer) on both xrvr-1 and xrvr-4 to check the PCEP session between PCC and SR-PCE:
+Step 9: Enter the following commands ```"show segment-routing traffic-eng pcc ipv4 peer"``` on both ```xrvr-1``` and ```xrvr-4``` to check the PCEP session between PCC and SR-PCE:
 
 ```
 RP/0/0/CPU0:xrvr-4#show segment-routing traffic-eng pcc ipv4 peer
@@ -261,7 +261,7 @@ Peer address: 100.0.0.9, Precedence: 255, (best PCE)
   Capabilities: Stateful, Update, Segment-Routing, Instantiation
 
 ```
-Step 10:  Check on SR-PCE node (xrvr-9) the PCEP sessions with the PE nodes (xrvr-1 and xrvr-4) as following:
+Step 10:  Check on SR-PCE node (```xrvr-9```) the PCEP sessions with the PE nodes (```xrvr-1``` and ```xrvr-4```) as following:
 ```
 RP/0/0/CPU0:xrvr-9#show pce ipv4 peer
 Fri Dec 20 18:39:46.833 UTC
