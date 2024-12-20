@@ -9,7 +9,7 @@ pce
 commit
 ```
 
-SR-PCE gets its topology information from the BGP-LS address family. Typically, BGP Route Reflectors distribute BGP-LS information throughout the network. In this example, the xrvr-2 distributes BGP-LS information to SR-PCE (xrvr-9). Any node can provide the BGP-LS topology feed to the SR-PCE.
+SR-PCE gets its topology information from the BGP-LS (link-state) address family. Typically, BGP Route Reflectors distribute BGP-LS information throughout the network. In this example, the xrvr-2 distributes BGP-LS information to SR-PCE (xrvr-9). Any node can provide the BGP-LS topology feed to the SR-PCE.
 
 Step 2:  Enable the link state address family on the router xrvr-2 and xrvr-9 in AS 64001 in order to share the BGP-LS with the SR-PCE.
 
