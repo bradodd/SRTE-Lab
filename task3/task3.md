@@ -48,7 +48,7 @@ L2 100.0.0.4/32 [30/115] medium priority
      src xrvr-4.00-00, 100.0.0.4, prefix-SID index 4, R:0 N:1 P:0 E:0 V:0 L:0
 ```
 The output above clearly shows the Prefix-SID (index 4 = “19004“) of Loopback0 Interface of xrvr-4 (PE router).
-
+<img src="../images/t3s3.png">
 
 > INFORMATION
 > The above commands show that ecmp is present when doing segment routing, and it confirms that the labels are based on SR.
