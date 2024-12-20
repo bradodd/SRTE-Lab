@@ -152,14 +152,14 @@ Devices xrvr-1 and xrvr-4 should have the following configuration
 router isis 1
 interface GigabitEthernet0/0/0/0
  address-family ipv4 unicast
-  no fast-reroute per-prefix
-  no fast-reroute per-prefix ti-lfa
+  fast-reroute per-prefix
+  fast-reroute per-prefix ti-lfa
   exit
  exit
 interface GigabitEthernet0/0/0/1
  address-family ipv4 unicast
-  no fast-reroute per-prefix
-  no fast-reroute per-prefix ti-lfa
+  fast-reroute per-prefix
+  fast-reroute per-prefix ti-lfa
   exit
  exit
 commit
@@ -169,20 +169,20 @@ Devices xrvr-2 & 3 and xrvr-5 & 6 should have the following configuration
 router isis 1
 interface GigabitEthernet0/0/0/0
  address-family ipv4 unicast
-  no fast-reroute per-prefix
-  no fast-reroute per-prefix ti-lfa
+  fast-reroute per-prefix
+  fast-reroute per-prefix ti-lfa
   exit
  exit
 interface GigabitEthernet0/0/0/1
  address-family ipv4 unicast
-  no fast-reroute per-prefix
-  no fast-reroute per-prefix ti-lfa
+  fast-reroute per-prefix
+  fast-reroute per-prefix ti-lfa
   exit
  exit
 interface GigabitEthernet0/0/0/2
  address-family ipv4 unicast
-  no fast-reroute per-prefix
-  no fast-reroute per-prefix ti-lfa
+  fast-reroute per-prefix
+  fast-reroute per-prefix ti-lfa
   exit
  exit
 commit
