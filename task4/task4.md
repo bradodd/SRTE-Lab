@@ -6,7 +6,7 @@ This scenario demonstrates the configuration of TI-LFA link protection and the v
 
 ```
 RP/0/0/CPUO:xrvr-1#show isis adjacency systemid xrvr-2 detail
-Sat Apr 14 08:22:52.394 UTC
+Fri Dec 20 15:26:41.646 UTC
 
 IS-IS 1 Level-2 adjacencies:
 System Id Interface SNPA State Hold Changed NSF IPv4 IPv6
@@ -55,7 +55,7 @@ First we confirm that backup paths exist in the table.
 
 ```
 RP/0/0/CPUO:xrvr-1# show isis fast-reroute 100.0.0.4/32 detail
-Sat Apr 14 08:30:25.923 UTC
+Fri Dec 20 15:29:41.646 UTC
 
 L2 100.0.0.4/32 [30/115] medium priority
   via 99.1.6.6, Gigabit Ethernet0/0/0/1, xrvr-6, SRGB Base: 19000, Weight: 0
@@ -74,7 +74,7 @@ L2 100.0.0.4/32 [30/115] medium priority
 
 ```
 RP/0/0/CPUO:xrvr-1#show route 100.0.0.4/32 detail
-Sun Apr 22 08:17:41.645 UTC
+Fri Dec 20 15:33:31.136 UTC
 
 Routing entry for 100.0.0.4/32
  Known via "isis 1", distance 115, metric 30, labeled Sr, type level-2
@@ -111,7 +111,7 @@ No advertising protos.
 5. Verify the backup path in FIB. Notice the CEF contains the primary (Protected) and backup path (Backup) by using "sh cef 100.0.0.4/32“.
 ```
 RP/0/0/CPUO:xrvr-1#sh cef 100.0.0.4/32
-Sat Apr 14 08:35:48.411 UTC
+Fri Dec 20 15:35:11.222 UTC
 100.0.0.4/32, version 76, labeled SR, internal 0x1000001 0x83 (ptr Oxa13f2174) [1], Oxo (Oxa13d7b00), Oxa28 (Oxa17c907c)
  Updated Apr 14 08:25:49.022
  local adjacency 99.1.2.2
@@ -123,7 +123,7 @@ Sat Apr 14 08:35:48.411 UTC
 6. Verify adjacency segment protection by using "show isis adjacency systemid xrvr-2 detail“.
 ```
 RP/0/0/CPUO:xrvr-1#show isis adjacency systemid xrvr-2 detail
-Sat Apr 14 08:37:14.775 UTC
+Fri Dec 20 15:36:24.525 UTC
 
 IS-IS 1 Level-2 adjacencies:
 System Id Interface SNPA State Hold Changed NSF IPv4 IPv6
