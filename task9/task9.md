@@ -197,7 +197,7 @@ commit
 ```
 !
 Step 3:  Next, on ```‘xrvr-4```‘, let’s apply the new route-policy in BGP as following:
-
+```
 router bgp 64001
  !
  neighbor 100.0.0.1
@@ -209,16 +209,17 @@ router bgp 64001
  !
 end
 !
+```
 Step 4:  Let us check and verify that ```‘‘xrvr-1```‘ is receiving both prefixes with their respective BGP colors as configure earlier:
 
 
 
 Step 5:  Next, let us check on ```‘‘xrvr-1```‘ which path the ODN SR-Policy (for ‘8.8.8.8/32′) takes to reach ```‘xrvr-4```‘. Use the following cli command:
 
-‘show segment-routing traffic-eng policy color 60‘
+```‘show segment-routing traffic-eng policy color 60‘```
 
 
-As can be seen from the Label values above (19005, 19006), the On-demand Policy we created specifically for prefix ‘8.8.8.8/32’ takes the following path ```‘‘xrvr-1```‘ -> ‘xrvr-6‘ -> ‘xrvr-5‘ -> ```‘xrvr-4```‘.
+As can be seen from the Label values above (19005, 19006), the On-demand Policy we created specifically for prefix ‘8.8.8.8/32’ takes the following path ```‘‘xrvr-1```‘ -> ```‘xrvr-6‘``` -> ‘xrvr-5‘ -> ```‘xrvr-4```‘.
 
 Step 6:  Finally, let us verify the end-to-end path using traceroute on ‘```xrvr-7```‘:
 
