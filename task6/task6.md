@@ -50,7 +50,7 @@ end
 ```
 
 Step 3:  On xrvr-1, verify the status of the SR policy by using "show segment-routing traffic-eng policy”:
-<img src="../images/t6s3.png">
+<img src="../images/t6s3.png" width=768>
 
 > NOTE:
 > The segment list is as specified in the explicit path.
