@@ -110,7 +110,10 @@ segment-routing
  commit
 end
 ```
+<img src="../images/t6s8a.png" width=768>
 
+
+<img src="../images/t6s8b.png" width=768>
 > OPTIONAL STEP 
 > Step 9:  If you want to push the customer traffic coming from CE’s inside the SR Policy, you need to shutdown all the other TE Tunnels created on previous tasks and also apply the following additional command (autoroute include ipv4 100.0.0.4/32) on xrvr-1 and (autoroute include ipv4 100.0.0.1/32) xrvr-4 as shown below:
 
