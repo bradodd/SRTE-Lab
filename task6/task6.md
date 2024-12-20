@@ -137,3 +137,9 @@ end
 Now that the policy is deployed, lets confirm the new path
 
 <img src="../images/t6s9.png" width=768>
+
+What does it look like in the routing table?
+
+<img src="../images/t6s9b.png" width=768>
+
+
