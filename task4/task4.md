@@ -43,6 +43,8 @@ commit
 ```
 
 3. Verify the repair path on xrvr-1 for xrvr-4. Notice that the output of the show isis fast-reroute command displays the backup path for 100.0.0.4/32 as FRR backup. Traffic is steered towards xrvr-2 (Gi0/0/0/0).
+
+First we confirm that backup paths exist in the table.
 <img src="../images/t4s3.png">
 
 > IMPORTANT: the ‘(!)’ at the end of some of the loopback routes.  These are the routes protected by FRR.  These routes are installed in the FIB as a backup route in the event the primary path fails.  With these backup routes, the router does not need to wait for ISIS to reconverge before forwarding packets again.
