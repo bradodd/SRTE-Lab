@@ -56,6 +56,7 @@ The output above clearly shows the Prefix-SID (index 4 = “19004“) of Loopbac
 Step 4:
 Check the cef entry of route 100.0.0.8/32 on xrvr-1 by using "show cef vrf RED 100.0.0.8/32":
 
+<img src="../images/t3s4.png">
 
 Step 5:
 After verifying that the control plane is using Segment Routing, we can remove LDP from the core.
@@ -88,6 +89,7 @@ Fri Nov 27 15:28:15.313 UTC
 Step 1:
 On xrvr-1, verify the various MPLS forwarding entries programmed by issuing the command "show mpls forwarding" as below:
 
+<img src="../images/t3s8.png">
 
 * By default, Penultimate Hop Popping (PHP) is enabled. For example, for neighbor xrvr-2’s prefix-SID (19002) the label is Pop, as seen above
 * Prefix SIDs are ECMP aware, e.g. the ipv4 prefix-SID to xrvr-4 (19004), has two outgoing labels, as seen above. One towards xrvr-2 and one towards xrvr-6.
