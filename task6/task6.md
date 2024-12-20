@@ -55,7 +55,7 @@ Step 3:  On xrvr-1, verify the status of the SR policy by using "show segment-ro
 > NOTE:
 > The segment list is as specified in the explicit path.
 
-Step 4:  On xrvr-1, verify the Binding-SID (label 4000) forwarding entry using "show mpls forwarding labels 4000″):
+Step 4:  On xrvr-1, verify the Binding-SID (label 4000) forwarding entry using "show mpls forwarding labels 4000″:
 ```
 RP/0/0/CPUO:xrvr-1#show mpls forwarding labels 4000
 Fri Dec 20 16:00:24.857 UTC
@@ -65,7 +65,7 @@ Label   Label       or ID   Interface                   Switched
 4000    Pop         No ID   srte_c_10_ep   point2 point    0
 ```
 
-Step 5:  On xrvr-1, verify the forwarding entry of the SR policy (‘srte_c_10_ep’) using alias “g6″:
+Step 5:  On xrvr-1, verify the forwarding entry of the SR policy (‘srte_c_10_ep’) using "show mpls forwarding tunnels″:
 
 ```
 RP/0/0/CPUO:xrvr-1#show mpls forwarding tunnels
@@ -78,7 +78,7 @@ srte_c_10_ep        (SR) 19003  Gi0/0/0/0    99.1.2.2        0
 ```
 Step 6:  Enter the following command (show mpls forwarding tunnels detail | begin srte) to see details of the imposed Label Stack:
 
-
+<img src="../images/t6s3.png" width=768>
 > NOTE:
 > Let's create now the reverse SR Policy (tunnel) from XRVR-4 towards XRVR-1 as Destination.
 
