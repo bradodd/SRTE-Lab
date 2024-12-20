@@ -102,19 +102,18 @@ Step 5:  Verify the status of the SR policy on ```xrvr-4``` by using the command
 Step 6:  Enter the following command (“```show pce lsp detail```”) on SR-PCE to show the SR policy information that we created on ```xrvr-4``` (PCC – 100.0.0.4):
 ```
 RP/0/0/CPU0:xrvr-9#show pce lsp detail
-Mon Apr 12 22:49:06.985 UTC
+Fri Dec 20 20:37:33.259 UTC
 
 PCE's tunnel database:
 ----------------------
-
-PCC 100.0.0.4:
+PCC 100.0.0.1:
 
 Tunnel Name: cfg_1_discr_50
 Color: 10
-Interface Name: srte_c_10_ep_100.0.0.1
+Interface Name: srte_c_10_ep_100.0.0.4
  LSPs:
   LSP[0]:
-   source 100.0.0.4, destination 100.0.0.1, tunnel ID 3, LSP ID 1
+   source 100.0.0.1, destination 100.0.0.4, tunnel ID 1, LSP ID 2
    State: Admin up, Operation up
    Setup type: Segment Routing
    Binding SID: 4000
@@ -127,6 +126,42 @@ Interface Name: srte_c_10_ep_100.0.0.1
      PLSP-ID 0x1, flags: D:1 S:0 R:0 A:1 O:1 C:0
    LSP Role: Single LSP
    State-sync PCE: None
+   PCC: 100.0.0.1
+   LSP is subdelegated to: None
+   Reported path:
+     Metric type: TE, Accumulated Metric 30
+      SID[0]: Node, Label 19005, Address 100.0.0.5
+      SID[1]: Node, Label 19004, Address 100.0.0.4
+   Computed path: (Local PCE)
+     Computed Time: Fri Dec 20 20:36:28 UTC 2024 (00:01:05 ago)
+     Metric type: TE, Accumulated Metric 30
+      SID[0]: Node, Label 19005, Address 100.0.0.5
+      SID[1]: Node, Label 19004, Address 100.0.0.4
+   Recorded path:
+     None
+   Disjoint Group Information:
+     None
+
+PCC 100.0.0.4:
+
+Tunnel Name: cfg_1_discr_50
+Color: 10
+Interface Name: srte_c_10_ep_100.0.0.1
+ LSPs:
+  LSP[0]:
+   source 100.0.0.4, destination 100.0.0.1, tunnel ID 1, LSP ID 2
+   State: Admin up, Operation up
+   Setup type: Segment Routing
+   Binding SID: 4000
+   Maximum SID Depth: 10
+   Absolute Metric Margin: 0
+   Relative Metric Margin: 0%
+   Preference: 50
+   Bandwidth: requested 0 kbps, applied 0 kbps
+   PCEP information:
+     PLSP-ID 0x2, flags: D:1 S:0 R:0 A:1 O:1 C:0
+   LSP Role: Single LSP
+   State-sync PCE: None
    PCC: 100.0.0.4
    LSP is subdelegated to: None
    Reported path:
@@ -134,7 +169,7 @@ Interface Name: srte_c_10_ep_100.0.0.1
       SID[0]: Node, Label 19006, Address 100.0.0.6
       SID[1]: Node, Label 19001, Address 100.0.0.1
    Computed path: (Local PCE)
-     Computed Time: Mon Apr 12 22:30:09 UTC 2021 (00:18:58 ago)
+     Computed Time: Fri Dec 20 20:36:28 UTC 2024 (00:01:05 ago)
      Metric type: TE, Accumulated Metric 30
       SID[0]: Node, Label 19006, Address 100.0.0.6
       SID[1]: Node, Label 19001, Address 100.0.0.1
@@ -142,6 +177,7 @@ Interface Name: srte_c_10_ep_100.0.0.1
      None
    Disjoint Group Information:
      None
+
 ```
 Step 7:  In this step, we will verify end-to-end connectivity from ```xrvr-7``` to ```xrvr-8```, in order to make sure the traffic is passing through the SR Policies created earlier. But, before we do that, let’s verify if there is any Data / Packet flow going via the SR Policy on ```xrvr-1```:
 
