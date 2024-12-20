@@ -84,6 +84,9 @@ Step 6:  Enter the following command (show mpls forwarding tunnels detail | begi
 
 
 Step 7:  On xrvr-4, enter the following commands to configure the explicit path. The explicit path expresses the SIDLIST-2 of the SR policy path.
+
+Prior to creating the backup path lets first verify the current path
+<img src="../images/t6s7.png" width=768>
 ```
 configure
  segment-routing traffic-eng
@@ -129,3 +132,5 @@ segment-routing
  commit
 end
 ```
+Now that the policy is established lets confirm the new path
+<img src="../images/t6s9.png" width=768>
