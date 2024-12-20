@@ -97,7 +97,7 @@ segment-routing
       pcep
 ```
 Step 5:  Verify the status of the SR policy on ```xrvr-4``` by using the command (“```show segment-routing traffic-eng policy```”) as shown below. Also make sure the Path is dynamically calculated by the PCE:
-
+<img src="../images/t8s5.png" width=768>
 
 Step 6:  Enter the following command (“```show pce lsp detail```”) on SR-PCE to show the SR policy information that we created on ```xrvr-4``` (PCC – 100.0.0.4):
 ```
