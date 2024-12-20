@@ -18,6 +18,7 @@ traffic-eng
    include ipv4 100.0.0.4/32
   !
   candidate-paths
+exit
    preference 50
     dynamic
      pcep
