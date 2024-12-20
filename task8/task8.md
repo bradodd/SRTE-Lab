@@ -24,7 +24,7 @@ exit
      pcep
 ```
 Step 2:  Verify the status of the SR policy on ```xrvr-1``` by using the command (```“show segment-routing traffic-eng policy```”) as shown below. Also make sure the Path is dynamically calculated by the PCE:
-
+<img src="../images/t8s2.png" width=768>
 
 > Note: ```xrvr-1``` used PCEP PCRequest and PCReply messages to request and receive the path computation. Then ```xrvr-1``` sent a PCReport message to report the SR Policy to ```xrvr-9``` node. In the report to its SR-PCE, ```xrvr-1``` sets the delegate (D) flag, to indicate that SR-PCE can update the path.
 
@@ -77,6 +77,8 @@ RP/0/0/CPU0:xrvr-9#
 Repeat the step on router ```xrvr-4``` in order to have the reverse path tunnel, as per Step 4 below.
 
 Prior to making the change, lets confirm what the status of the SR Policy
+
+<img src="../images/t8s4.png" width=768>
 
 Step 4:  On ```xrvr-4```, enter the following commands to instantiate an SR policy named “```Policy 1```” and configure the policy to request SR-PCE to compute a path to end-point 100.0.0.1 (```xrvr-1```). SR-PCE must calculate the best path for the destination (```xrvr-1```) and provide a List of Segments to ```xrvr-4```. In turn, ```xrvr-4``` will install this List of Segments in CEF table for the “```Policy 1```“.
 ```
