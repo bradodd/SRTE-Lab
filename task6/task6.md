@@ -132,5 +132,7 @@ segment-routing
  commit
 end
 ```
-Now that the policy is established lets confirm the new path
+
+Now that the policy is deployed, lets confirm the new path
+
 <img src="../images/t6s9.png" width=768>
