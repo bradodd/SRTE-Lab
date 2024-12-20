@@ -18,26 +18,22 @@ Step 2:  Enable the link state address family on the router xrvr-2 and xrvr-9 in
 On xrvr-9:
 Enter the following 
 ```
-RP/0/0/CPUO:xrvr-9#configure
-RP/0/0/CPUO:xrvr-9 (config)#h2
-RP/0/0/CPUO:xrvr-9 (config)#router bgp 64001
-RP/0/0/CPUO:xrvr-9 (config)#address-family link-state link-state
-RP/0/0/CPUO:xrvr-9 (config)#neighbor 100.0.0.2
-RP/0/0/CPUO:xrvr-9 (config)#address-family link-state link-state
-RP/0/0/CPUO:xrvr-9 (config)#commit
-Sun Apr 11 08:53:00.059 UTC
-RP/0/0/CPUO:xrvr-9 (config)#end
+configure
+router bgp 64001
+address-family link-state link-state
+neighbor 100.0.0.2
+address-family link-state link-state
+commit
+end
 ```
 On xrvr-2:
 ```
-RP/0/0/CPUO:xrvr-2 (config)#h2
-RP/0/0/CPUO:xrvr-2 (config)#router bgp 64001
-RP/0/0/CPUO:xrvr-2 (config)#address-family link-state link-state
-RP/0/0/CPUO:xrvr-2 (config)#neighbor 100.0.0.9
-RP/0/0/CPUO:xrvr-2 (config)#address-family link-state link-state
-RP/0/0/CPUO:xrvr-2 (config)#commit
-Sun Apr 11 08:04:12.163 UTC
-RP/0/0/CPUO:xrvr-2 (config)#end
+router bgp 64001
+address-family link-state link-state
+neighbor 100.0.0.9
+address-family link-state link-state
+commit
+end
 ```
 
 Step 3:  Enable the Link Gig0/0/0/4 on xrvr-2 as following:
@@ -52,7 +48,6 @@ Step 4:  Enter the following commands to see the BGP-LS information on xrvr-9.
 
 ```
 RP/0/0/CPUO:xrvr-9#show bgp link-state link-state
-Sun Apr 11 08:55:45.907 UTC
 BGP router identifier 100.0.0.9, local es number 64001
 BGP generic scan interval 60 secs
 Non-stop routing is enabled
