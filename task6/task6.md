@@ -79,7 +79,7 @@ srte_c_10_ep        (SR) 19003  Gi0/0/0/0    99.1.2.2        0
 Step 6:  Enter the following command (show mpls forwarding tunnels detail | begin srte) to see details of the imposed Label Stack:
 
 <img src="../images/t6s6.png" width=768>
-> NOTE:Let's create now the reverse SR Policy (tunnel) from XRVR-4 towards XRVR-1 as Destination.
+> NOTE: Let's create now the reverse SR Policy (tunnel) from XRVR-4 towards XRVR-1 as Destination.
 
 Step 7:  On xrvr-4, enter the following commands to configure the explicit path. The explicit path expresses the SIDLIST-2 of the SR policy path.
 ```
@@ -109,7 +109,7 @@ segment-routing
 end
 ```
 
->OPTIONAL STEP 
+> OPTIONAL STEP 
 >Step 9:  If you want to push the customer traffic coming from CE’s inside the SR Policy, you need to shutdown all the other TE Tunnels created on previous tasks and also apply the following additional command (autoroute include ipv4 100.0.0.4/32) on xrvr-1 and (autoroute include ipv4 100.0.0.1/32) xrvr-4 as shown below:
 
 
