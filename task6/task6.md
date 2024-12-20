@@ -78,7 +78,7 @@ srte_c_10_ep        (SR) 19003  Gi0/0/0/0    99.1.2.2        0
 ```
 Step 6:  Enter the following command (show mpls forwarding tunnels detail | begin srte) to see details of the imposed Label Stack:
 
-<img src="../images/t6s3.png" width=768>
+<img src="../images/t6s6.png" width=768>
 > NOTE:
 > Let's create now the reverse SR Policy (tunnel) from XRVR-4 towards XRVR-1 as Destination.
 
