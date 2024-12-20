@@ -28,7 +28,7 @@ Step 2:  Verify the status of the SR policy on ```xrvr-1``` by using the command
 
 > Note: ```xrvr-1``` used PCEP PCRequest and PCReply messages to request and receive the path computation. Then ```xrvr-1``` sent a PCReport message to report the SR Policy to ```xrvr-9``` node. In the report to its SR-PCE, ```xrvr-1``` sets the delegate (D) flag, to indicate that SR-PCE can update the path.
 
-Step 3:  Enter the following command (“show pce lsp detail”) on SR-PCE to show the SR policy information that we created on ```xrvr-1``` (PCC – 100.0.0.1):
+Step 3:  Enter the following command (“```show pce lsp detail```”) on SR-PCE to show the SR policy information that we created on ```xrvr-1``` (PCC – 100.0.0.1):
 ```
 RP/0/0/CPU0:xrvr-9#show pce lsp detail
 Fri Dec 20 19:19:44.239 UTC
@@ -74,9 +74,9 @@ Interface Name: srte_c_10_ep_100.0.0.4
 RP/0/0/CPU0:xrvr-9#
 ```
 > Repeat
-Repeat the step on router xrvr-4 in order to have the reverse path tunnel, as per Step 4 below.
+Repeat the step on router ```xrvr-4``` in order to have the reverse path tunnel, as per Step 4 below.
 
-Step 4:  On xrvr-4, enter the following commands to instantiate an SR policy named “```Policy 1```” and configure the policy to request SR-PCE to compute a path to end-point 100.0.0.1 (```xrvr-1```). SR-PCE must calculate the best path for the destination (```xrvr-1```) and provide a List of Segments to xrvr-4. In turn, xrvr-4 will install this List of Segments in CEF table for the “```Policy 1```“.
+Step 4:  On ```xrvr-4```, enter the following commands to instantiate an SR policy named “```Policy 1```” and configure the policy to request SR-PCE to compute a path to end-point 100.0.0.1 (```xrvr-1```). SR-PCE must calculate the best path for the destination (```xrvr-1```) and provide a List of Segments to ```xrvr-4```. In turn, ```xrvr-4``` will install this List of Segments in CEF table for the “```Policy 1```“.
 ```
 segment-routing
  traffic-eng
@@ -92,10 +92,10 @@ segment-routing
      dynamic
       pcep
 ```
-Step 5:  Verify the status of the SR policy on xrvr-4 by using the command (“```show segment-routing traffic-eng policy```”) as shown below. Also make sure the Path is dynamically calculated by the PCE:
+Step 5:  Verify the status of the SR policy on ```xrvr-4``` by using the command (“```show segment-routing traffic-eng policy```”) as shown below. Also make sure the Path is dynamically calculated by the PCE:
 
 
-Step 6:  Enter the following command (“```show pce lsp detail```”) on SR-PCE to show the SR policy information that we created on xrvr-4 (PCC – 100.0.0.4):
+Step 6:  Enter the following command (“```show pce lsp detail```”) on SR-PCE to show the SR policy information that we created on ```xrvr-4``` (PCC – 100.0.0.4):
 ```
 RP/0/0/CPU0:xrvr-9#show pce lsp detail
 Mon Apr 12 22:49:06.985 UTC
