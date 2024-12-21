@@ -58,12 +58,12 @@ Step 3:  Here is a challenge for YOU. Now that you understand Flex-Algo config, 
 
 Step 4:  Challenge continues… do the same for xrvr-5 and xrvr-6, and make sure for the Red plane (flex-algo 129) you use the ‘1960X‘ Prefix-SID, where ‘x’ represents the router number (5 and 6 in this case):
 
-Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we can see those Prefix-SID specific to Flex-algo. On ‘```xrvr-1```’ check the MPLS forwarding table as below, and make sure you see your Prefix-SID as highlighted below:
+Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we can see those Prefix-SID specific to Flex-algo. On ‘```xrvr-1```’ check the MPLS forwarding table as below, and make sure you see your Prefix-SID as highlighted below:<br>
 _Before_ 
-<img src="../images/s9t5a.png">
+<img src="../images/s9s5a.png">
 
 _After_ 
-<img src="../images/s9t5b.png">
+<img src="../images/s9s5b.png">
 
 Step 6:  Alright, we have done quite some progress, now what’s left is to Push the Data Traffic to a SR-Policy by using the Blue plane only, and avoiding Red plane. This can be achieved as following. On ```‘xrvr-1```‘ configure the SR-Policy as below:
 ```
