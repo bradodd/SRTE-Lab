@@ -69,7 +69,7 @@ Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we 
 <img src="../images/t9s5b.png" width=512>
 </pre></code></details>
 
-Step 6:  Alright, we have done quite some progress, now what’s left is to Push the Data Traffic to a SR-Policy by using the Blue plane only, and avoiding Red plane. This can be achieved as following. On ```‘xrvr-1‘``` configure the SR-Policy as below:
+Step 6:  Alright, we have made quite some progress, now what’s left is to Push the Data Traffic to a SR-Policy by using the Blue plane only, and avoiding Red plane. This can be achieved as following. On ```‘xrvr-1‘``` configure the SR-Policy as below:
 ```
 segment-routing
  traffic-eng
