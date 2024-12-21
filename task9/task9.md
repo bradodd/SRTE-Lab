@@ -252,7 +252,7 @@ Step 5:  Next, let us check on ```‘‘xrvr-1```‘ which path the ODN SR-Polic
 
 ```‘show segment-routing traffic-eng policy color 60‘```
 <br>_After_<br>
-<details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
+<details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
 <img src="../images/t93s5.png" width=512>
 </pre></code></details> <br>
 
