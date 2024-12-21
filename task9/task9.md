@@ -64,7 +64,7 @@ Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we 
 <img src="../images/t9s5a.png" width=512>
 </pre></code></details> <br>
 <br><br>
-_After_ <br>
+_After_ 
 <details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
 <img src="../images/t9s5b.png" width=512>
 </pre></code></details>
