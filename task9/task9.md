@@ -64,7 +64,7 @@ Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we 
 <details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
 <img src="../images/t9s5a.png" width=512>
 </pre></code></details> <br>
-<br><i>After</i></i><br>
+<i>After</i></i><br>
    <details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
 <img src="../images/t9s5b.png" width=512>
 </pre></code></details>
@@ -87,7 +87,7 @@ Next, as seen below, verify (```‘show segment-routing traffic-eng policy‘```
 <details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
 <img src="../images/t9s6a.png" width=512>
 </pre></code></details> <br>
-<br><i>After</i></i><br>
+<i>After</i></i><br>
    <details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
 <img src="../images/t9s6b.png" width=512>
 </pre></code></details>
@@ -140,7 +140,7 @@ Step 3:  To verify that we are receiving ‘100.0.0.8/32‘ prefix with color �
 <details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
 <img src="../images/t92s3a.png" width=512>
 </pre></code></details> <br>
-<br><i>After</i></i><br>
+<i>After</i></i><br>
    <details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
 <img src="../images/t92s3b.png" width=512>
 </pre></code></details>
