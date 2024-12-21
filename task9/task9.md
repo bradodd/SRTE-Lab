@@ -95,7 +95,7 @@ Next, as seen below, verify (```‘show segment-routing traffic-eng policy‘```
 
 <img src="../images/t9s7.png" width=512>
 Look at that result, beautiful.. Remember, the Prefix-SIDs starting with ‘1950X’ are part of the Blue plane. In the output above we can see Prefix-SID ‘19504’ which belongs to ‘```xrvr-4```’ (the destination PE).
-
+<br>
 This also proves that by using Flex-Algo, a Network Operator can dramatically reduce the number of Prefix-SIDs (labels) pushed into the label stack on PE’s. So only one label is needed to push traffic through a specific plane.
 
 ## Configure Automated Steering (AS)
