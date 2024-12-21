@@ -150,7 +150,7 @@ segment-routing
 Step 5:  Finally, let’s verify on CE router (```xrvr-7```) that we can reach BGP prefix ‘100.0.0.8/32‘ via the explicit path mentioned above, whereas all other BGP prefix will follow another path:
 
 
-On-Demand Next Hop (ODN)
+## On-Demand Next Hop (ODN)
 BGP can automatically steer traffic into an SR Policy based on BGP next-hop and color of a route. Color of a route is specified by its color extended community attribute. Color extended community is assigned to BGP prefixes (customer routes).
 
 A service head-end (PE router) automatically instantiates an SR Policy to a BGP next-hop when required (on-demand). Color community is used as SLA indicator.
