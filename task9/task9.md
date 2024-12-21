@@ -83,7 +83,7 @@ Look at that result, beautiful.. Remember, the Prefix-SIDs starting with ‘1950
 
 This also proves that by using Flex-Algo, a Network Operator can dramatically reduce the number of Prefix-SIDs (labels) pushed into the label stack on PE’s. So only one label is needed to push traffic through a specific plane.
 
-Configure Automated Steering (AS)
+## Configure Automated Steering (AS)
 BGP can automatically steer traffic into an SR Policy based on BGP next-hop and color of a route. Color of a route is specified by its color extended community attribute. Color extended community is assigned to BGP prefixes (customer routes).
 
 We will assign a color extended community to customer prefix (100.0.0.8/32) on ```xrvr-4```, and advertise the same prefix with BGP color community to ```xrvr-1```. On ```xrvr-1```, we will create a new SR-Policy with the same color number as the BGP color extended community that was assigned to ‘100.0.0.8/32’ by the other PE node. Based on that, traffic destined to the customer prefix mentioned above will be steered through the SR-Policy.
