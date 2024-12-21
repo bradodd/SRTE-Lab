@@ -56,7 +56,7 @@ router isis 1
 Step 3:  Here is a challenge for YOU. Now that you understand Flex-Algo config, let’s enable Flex-algo on xrvr-3 (hint: check above example from xrvr-2 and change the Prefix-SID so that they are unique in the domain):
 
 
-Step 4:  Challenge continues… do the same for xrvr-5 and xrvr-6, and make sure for the Red plane (flex-algo 129) you use the ‘1960X‘ Prefix-SID, where ‘x’ represents the router number (5 and 6 in this case):
+Step 4:  Challenge continues… do the same for ```xrvr-5``` and ```xrvr-6```, and make sure for the Red plane (flex-algo 129) you use the ‘1960X‘ Prefix-SID, where ‘x’ represents the router number (5 and 6 in this case):
 
 Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we can see those Prefix-SID specific to Flex-algo. On ‘```xrvr-1```’ check the MPLS forwarding table as below, and make sure you see your Prefix-SID as highlighted below:<br>
 
@@ -69,7 +69,7 @@ Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we 
 <img src="../images/t9s5b.png" width=512>
 </pre></code></details>
 
-Step 6:  Alright, we have done quite some progress, now what’s left is to Push the Data Traffic to a SR-Policy by using the Blue plane only, and avoiding Red plane. This can be achieved as following. On ‘xrvr-1‘ configure the SR-Policy as below:
+Step 6:  Alright, we have done quite some progress, now what’s left is to Push the Data Traffic to a SR-Policy by using the Blue plane only, and avoiding Red plane. This can be achieved as following. On ```‘xrvr-1‘``` configure the SR-Policy as below:
 ```
 segment-routing
  traffic-eng
@@ -129,7 +129,7 @@ router bgp 64001
 Step 3:  To verify that we are receiving ‘100.0.0.8/32‘ prefix with color ‘35′, let’s check it on ```xrvr-1``` as following:
 
 
-Step 4:  In this step, we are going back to ‘```xrvr-1```’ in order to configure an SR-Policy with the same color ‘35‘ as the BGP prefix ‘100.0.0.8/32‘. To make it more interesting, let’s also configure an explicit path just for this prefix. This explicit path, goes as following, ```xrvr-1``` -> xrvr-2 -> xrvr-6 -> xrvr-5 -> ```xrvr-4```:
+Step 4:  In this step, we are going back to ‘```xrvr-1```’ in order to configure an SR-Policy with the same color ‘35‘ as the BGP prefix ‘100.0.0.8/32‘. To make it more interesting, let’s also configure an explicit path just for this prefix. This explicit path, goes as following, ```xrvr-1``` -> ```xrvr-2``` -> ```xrvr-6``` -> ```xrvr-5``` -> ```xrvr-4```:
 ```
 segment-routing
  traffic-eng
