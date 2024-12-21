@@ -63,11 +63,11 @@ _Before_<br>
 <details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
 <img src="../images/t9s5a.png" width=512>
 </pre></code></details> <br>
-<br><br><br>
+<br><br>
 _After_<br>
-
+<details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
 <img src="../images/t9s5b.png" width=512>
-
+</pre></code></details>
 Step 6:  Alright, we have done quite some progress, now what’s left is to Push the Data Traffic to a SR-Policy by using the Blue plane only, and avoiding Red plane. This can be achieved as following. On ```‘xrvr-1```‘ configure the SR-Policy as below:
 ```
 segment-routing
