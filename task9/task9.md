@@ -26,7 +26,7 @@ interface Loopback0
        prefix-sid algorithm 129 absolute 19601
 ```
 On ```xrvr-4```, under ISIS routing instance, configure the Flex-Algo the router belongs to and the Prefix-SID (Algo SID) as per below: 
-```
+
 ```
 router isis 1
  flex-algo 128
