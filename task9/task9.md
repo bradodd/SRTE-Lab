@@ -242,17 +242,30 @@ end
 !
 ```
 Step 4:  Let us check and verify that ```‘‘xrvr-1```‘ is receiving both prefixes with their respective BGP colors as configure earlier:
-
+<details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
+<img src="../images/t93s4a.png" width=512><br>
+   <img src="../images/t93s4b.png" width=512>
+</pre></code></details> <br>
 
 
 Step 5:  Next, let us check on ```‘‘xrvr-1```‘ which path the ODN SR-Policy (for ‘8.8.8.8/32′) takes to reach ```‘xrvr-4```‘. Use the following cli command:
 
 ```‘show segment-routing traffic-eng policy color 60‘```
-
+<br>_After_<br>
+<details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
+<img src="../images/t93s5.png" width=512>
+</pre></code></details> <br>
 
 As can be seen from the Label values above (19005, 19006), the On-demand Policy we created specifically for prefix ‘8.8.8.8/32’ takes the following path ```‘‘xrvr-1```‘ -> ```‘xrvr-6‘``` -> ‘xrvr-5‘ -> ```‘xrvr-4```‘.
 
 Step 6:  Finally, let us verify the end-to-end path using traceroute on ‘```xrvr-7```‘:
-
+<br>_Before_<br>
+<details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
+<img src="../images/t93s6a.png" width=512>
+</pre></code></details> <br>
+<i>After</i></i><br>
+   <details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
+<img src="../images/t93s6b.png" width=512>
+</pre></code></details>
 
 Congratulations, you have successfully finished the SR-TE with Flex-Algo, Automated Steering (AS) and On-demand Next-hop tasks.
