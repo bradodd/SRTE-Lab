@@ -3,7 +3,7 @@
 This scenario demonstrates advanced use-cases with SR-TE, that is, Flex-Algo. Flex-Algo is used for Network Slicing, think of Multi-planar Network, where the Red plane serves specific traffic and Blue plane other type of traffic. 
 
 If a node advertises participation in Flex-Algo, likely it advertises a Prefix-SID for that Flex-Algo
-
+<img src="../images/s9s9.png" width=768>
 Configure Flex-Algo
 Step 1:  Based on the Topology below, let’s configure Flex-Algo in Multi-Plane mode, Blue (Algo 128) and Red (Algo 129) in the core routers: 
 
