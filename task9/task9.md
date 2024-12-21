@@ -95,11 +95,11 @@ Next, as seen below, verify (```‘show segment-routing traffic-eng policy‘```
 
 <img src="../images/t9s7.png" width=512>
 Look at that result, beautiful.. Remember, the Prefix-SIDs starting with ‘1950X’ are part of the Blue plane. In the output above we can see Prefix-SID ‘19504’ which belongs to ‘```xrvr-4```’ (the destination PE).
-<br>
+<br><br>
 This also proves that by using Flex-Algo, a Network Operator can dramatically reduce the number of Prefix-SIDs (labels) pushed into the label stack on PE’s. So only one label is needed to push traffic through a specific plane.
 
 ## Configure Automated Steering (AS)
-BGP can automatically steer traffic into an SR Policy based on BGP next-hop and color of a route. Color of a route is specified by its color extended community attribute. Color extended community is assigned to BGP prefixes (customer routes).
+BGP can automatically steer traffic into an SR Policy based on BGP next-hop and color of a route. The color of a route is specified by its color extended community attribute and a color extended community is assigned to BGP prefixes (customer routes).
 
 We will assign a color extended community to customer prefix (100.0.0.8/32) on ```xrvr-4```, and advertise the same prefix with BGP color community to ```xrvr-1```. On ```xrvr-1```, we will create a new SR-Policy with the same color number as the BGP color extended community that was assigned to ‘100.0.0.8/32’ by the other PE node. Based on that, traffic destined to the customer prefix mentioned above will be steered through the SR-Policy.
 
@@ -136,6 +136,14 @@ router bgp 64001
 ````
 Step 3:  To verify that we are receiving ‘100.0.0.8/32‘ prefix with color ‘35′, let’s check it on ```xrvr-1``` as following:
 
+<br>_Before_<br>
+<details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
+<img src="../images/t92s3a.png" width=512>
+</pre></code></details> <br>
+<br><i>After</i></i><br>
+   <details><summary><font size=4> Expand for After Validation  </summary><pre><code></font>
+<img src="../images/t92s3b.png" width=512>
+</pre></code></details>
 
 Step 4:  In this step, we are going back to ‘```xrvr-1```’ in order to configure an SR-Policy with the same color ‘35‘ as the BGP prefix ‘100.0.0.8/32‘. To make it more interesting, let’s also configure an explicit path just for this prefix. This explicit path, goes as following, ```xrvr-1``` -> ```xrvr-2``` -> ```xrvr-6``` -> ```xrvr-5``` -> ```xrvr-4```:
 ```
