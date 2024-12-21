@@ -81,7 +81,7 @@ segment-routing
     preference 190
         explicit segment-list FLEX-SID
 ```
-Next, as seen below, verify (```‘show segment-routing traffic-eng policy‘```) if SR-Policy uses the Blue Plane path (```xrvr-1``` -> xrvr-2 -> xrvr-3 -> ```xrvr-4```) based on a single Prefix-SID (19504) which is part of Flex-Algo “129” configured earlier.
+Next, as seen below, verify (```‘show segment-routing traffic-eng policy‘```) if SR-Policy uses the Blue Plane path (```xrvr-1``` -> xrvr-2 -> xrvr-3 -> ```xrvr-4```) based on a single Prefix-SID (19504) which is part of Flex-Algo “128” configured earlier.
 <br> <br>
 <br>_Before_<br>
 <details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
@@ -93,7 +93,7 @@ Next, as seen below, verify (```‘show segment-routing traffic-eng policy‘```
 </pre></code></details>
       Step 7:  Finally, let’s try end-to-end (```xrvr-7``` to ```xrvr-8```) connectivity with trace route in order to check whether we are using the Blue Plane as described above:
 
-
+<img src="../images/t9s7.png" width=512>
 Look at that result, beautiful.. Remember, the Prefix-SIDs starting with ‘1950X’ are part of the Blue plane. In the output above we can see Prefix-SID ‘19504’ which belongs to ‘```xrvr-4```’ (the destination PE).
 
 This also proves that by using Flex-Algo, a Network Operator can dramatically reduce the number of Prefix-SIDs (labels) pushed into the label stack on PE’s. So only one label is needed to push traffic through a specific plane.
