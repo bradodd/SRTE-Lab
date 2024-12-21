@@ -6,7 +6,8 @@ If a node advertises participation in Flex-Algo, likely it advertises a Prefix-S
 <img src="../images/s9s1.png" width=768></center>
 
 <br>
-**Configure Flex-Algo** 
+**Configure Flex-Algo
+<br>
 Step 1:  Based on the Topology below, let’s configure Flex-Algo in Multi-Plane mode, Blue (Algo 128) and Red (Algo 129) in the core routers: 
 
 
