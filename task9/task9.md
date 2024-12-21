@@ -82,7 +82,7 @@ segment-routing
         explicit segment-list FLEX-SID
 ```
 Next, as seen below, verify (```‘show segment-routing traffic-eng policy‘```) if SR-Policy uses the Blue Plane path (```xrvr-1``` -> xrvr-2 -> xrvr-3 -> ```xrvr-4```) based on a single Prefix-SID (19504) which is part of Flex-Algo “129” configured earlier.
-<br> 
+<br> <br>
       Step 7:  Finally, let’s try end-to-end (```xrvr-7``` to ```xrvr-8```) connectivity with trace route in order to check whether we are using the Blue Plane as described above:
 
 
