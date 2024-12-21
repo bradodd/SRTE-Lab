@@ -60,7 +60,9 @@ Step 4:  Challenge continues… do the same for xrvr-5 and xrvr-6, and make sure
 
 Step 5:  Now that you configured Flex-Algo on all routers, let’s make sure we can see those Prefix-SID specific to Flex-algo. On ‘```xrvr-1```’ check the MPLS forwarding table as below, and make sure you see your Prefix-SID as highlighted below:<br>
 _Before_<br>
+<details><summary><font size=4> Expand for Before Validation  </summary><pre><code></font>
 <img src="../images/t9s5a.png" width=512>
+</pre></code></details> <br>
 <br><br><br>
 _After_<br>
 
