@@ -6,7 +6,7 @@ The Lab is pre-configured with MPLS (LDP) in the core (xrvr-1 to xrvr-6) and L3-
 Step 2:
 Press Enter to access the connection and log into the console with the credentials: 
 
-<b>username: cisco 
+# <b>username: cisco 
 password: cisco</b>
 
 Step 3:
