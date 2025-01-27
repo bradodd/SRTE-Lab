@@ -20,7 +20,7 @@ RP/0/0/CPU0:xrvr-1(config)#segment-routing mpls
 RP/0/0/CPU0:xrvr-1(config)#commit
 ```
 > Repeat this task
-> Repeat this step on the core routers xrvr-1 to xrvr-6 to configure segment routing.×Dismiss this alert.
+> Repeat this step on the core routers xrvr-1 to xrvr-6 to configure segment routing.
 
 Step 2:
 Verify if Segment Routing is working and labels assigned per SR by using the command "show isis database xrvr-1 verbose detail" and "show mpls label table":
@@ -55,7 +55,7 @@ Confirm the SRGB has taken effect check as shown below using "show isis database
 <img src="../images/t6s2b.png" width="1200">
 
 > ATTENTION
-> The label 19000 confirms that SRGB has changed from default to manual (19000 - 20999)×Dismiss this alert.
+> The label 19000 confirms that SRGB has changed from default to manual (19000 - 20999).
 Follow Step-8 below by configuring the Prefix-SID of the loopbacks on the routers from xrvr-1 to xrvr-6 as given in the below table:
 
 Step 8:
@@ -73,7 +73,7 @@ end
 ```
 
 > INFORMATION
-> The prefix-sid values to the nodes can also be given by using the other command “prefix-sid index ”×Dismiss this alert.
+> The prefix-sid values to the nodes can also be given by using the other command “prefix-sid index ”.
 Step 9:
 Verify the loopbacks are assigned with the required Prefix SID as shown below:
 
@@ -92,7 +92,7 @@ Label         Prefix/Interface
 19006         100.0.0.6/32
 ```
 > Repeat Step-9 (optional)
-> Repeat this command on all nodes to view the prefix sid×Dismiss this alert.
+> Repeat this command on all nodes to view the prefix sid.
 Step 10:
 Now if we check the trace from xrvr-7 to the loopback of xrvr-8, it still shows LDP is preferred over Segment Routing, and that is fine, as expected. Next we will migrate from LDP to SR.
 ```
