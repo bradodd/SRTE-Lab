@@ -1,5 +1,5 @@
 # Task 3: Migrating from LDP to Segment routing
-
+<img src="/images/SRTE%20Lab.png" width="1200">
 Step 1:
 In order to prefer Segment Routing over LDP, following commands needs to be configured on the routers from xrvr-1 to xrvr-6.
 
