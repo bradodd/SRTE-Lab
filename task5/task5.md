@@ -1,5 +1,5 @@
 # Task 5: Implement SR-TE using Tunnels 
-
+<img src="/images/SRTE%20Lab.png" width="1200">
 This scenario demonstrates how to configure SR Traffic Engineering Tunnels in both explicit and dynamic manner.
 
 Explicit path to xrvr-4 is:
