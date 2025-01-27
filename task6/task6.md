@@ -1,5 +1,5 @@
 # Task 6: Implement Segment Routing Traffic Engineering (SR-TE) using SR-Policy
-
+<img src="/images/SRTE%20Lab.png" width="1200">
 This scenario demonstrates how to configure SR-TE Policies in an explicit way.
 
 > WARNING
