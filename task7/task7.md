@@ -1,5 +1,5 @@
 # Task 7: Enable Network Controller (SR-PCE)
-
+<img src="/images/SRTE%20Lab.png" width="1200">
 The Transport Network Controller also known as SR-PCE functionality should be enabled on xrvr-9.  SR-PCE functionality is fundamentally distributed, and you can install multiple SR-PCE nodes in a network. In this example, we have one SR-PCE node.  Path Computation Client (PCC) which are xrvr-1 and xrvr-4 PE routers use the SR-PCE node xrvr-9 for Path Computation purposes.  Enabling the SR-PCE server functionality on a node is simple. The only required configuration is the local address used for the PCEP connections.
 
 Step 1: On xrvr-9 enter the following command to configure PCE functionality.
