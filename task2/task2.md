@@ -49,7 +49,7 @@ configure
 end
 ```
 Step 6:
-Confirm the SRGB has taken effect check as shown below (by using aliases “b5” and “b6”):
+Confirm the SRGB has taken effect check as shown below using "show isis database xrvr-1 verbose detail" and “show mpls label table”):
 
 <img src="../images/t6s2a.png" width="1200">
 <img src="../images/t6s2b.png" width="1200">
