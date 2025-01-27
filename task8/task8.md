@@ -1,5 +1,5 @@
 # Task 8: Configure SR Dynamic Path using the Network Controller (SR-PCE)
-
+<img src="/images/SRTE%20Lab.png" width="1200">
 This scenario demonstrates how to instantiate an SR policy from a locally configured interface tunnel (a.k.a SR Policy). The SR Policy path can be computed locally on the head-end, or the SR-PCE Controller can compute it. In this scenario, SR-PCE computes the path.
 
 Step 1:  On ```xrvr-1```, enter the following commands to instantiate an SR Policy named “Policy 1” and configure the policy to request SR-PCE to compute a path to end-point 100.0.0.4 (xrvr-4). SR-PCE must calculate the best path for the destination (xrvr-4) and provide a List of Segments to ```xrvr-1```. In turn, ```xrvr-1``` will install this List of Segments in CEF for the “Policy 1“.
