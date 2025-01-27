@@ -7,7 +7,7 @@ Step 2:
 Press Enter to access the connection and log into the console with the credentials: 
 
 username: cisco 
-password: C1sco12345
+password: cisco
 
 Step 3:
 Issue the command 'show route ipv4' command to view the route table and verify the presence of the loopback0 addresses in the table.
