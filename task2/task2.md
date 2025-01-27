@@ -1,5 +1,5 @@
 # Task 2: Implement Segment Routing
-<img src="images/SRTE Lab.png" width="1200">
+<img src="/images/SRTE%20Lab.png" width="1200">
 Step 1:
 Enable segment routing on the core routers from xrvr-1 through xrvr-6 by entering the command segment-routing mpls under ISIS process.
 
