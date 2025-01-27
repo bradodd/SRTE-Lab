@@ -3,7 +3,7 @@
 Step 1:
 Enable segment routing on the core routers from xrvr-1 through xrvr-6 by entering the command segment-routing mpls under ISIS process.
 
-To enable Segment Routing, go to configuration mode (conf t), and then use the alias “b1“. The alias configures the following:
+To enable Segment Routing, go to configuration mode (conf t), and then execute the following configuration:
 ```
 configure
  router isis 1
