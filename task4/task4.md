@@ -1,5 +1,5 @@
 # Task 4: Implement TI-LFA
-
+<img src="/images/SRTE%20Lab.png" width="1200">
 This scenario demonstrates the configuration of TI-LFA link protection and the verification of the TI-LFA backup path based on the original topology.
 
 1.  Verify the adjacency-SIDs of xrvr-1 for the adjacency to xrvr–2:
