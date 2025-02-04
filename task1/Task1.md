@@ -162,7 +162,6 @@ mpls ldp
 
 ```
 ```
-RP/0/0/CPU0:xrvr-1#a7
 RP/0/0/CPU0:xrvr-1#show mpls ldp neighbor brief
 Fri Nov 27 13:51:39.510 UTC
 
