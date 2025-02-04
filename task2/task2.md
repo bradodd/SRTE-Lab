@@ -59,7 +59,7 @@ Confirm the SRGB has taken effect check as shown below using "show isis database
 Follow Step-8 below by configuring the Prefix-SID of the loopbacks on the routers from xrvr-1 to xrvr-6 as given in the below table:
 
 Step 8:
-Follow the below CLI to assign prefix SID to the loopbacks on the routers from xrvr-1 to xrvr-6
+Follow the below CLI to assign prefix SID to the loopbacks on the routers from xrvr-1 to xrvr-6.  In the example below we are configuring xrvr-1.  Please adjust the last digit of the absolute SID to map to the router name.
 
 ```
 
